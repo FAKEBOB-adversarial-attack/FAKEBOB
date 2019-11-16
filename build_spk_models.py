@@ -416,4 +416,4 @@ for i, spk_id in enumerate(enroll_spk_id):
 
 print(" --- dump speaker unique model done --- ")
 
-print("----- step 2: generate gmm identity and corresponding speaker model, setting threshold -----")
+print("----- step 2: generate gmm identity and corresponding speaker model, setting threshold done -----")

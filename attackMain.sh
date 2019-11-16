@@ -4,7 +4,7 @@ KALDI_ROOT=/root/gkchen/kaldi
 
 ########################################################
 # This small part of code is directly drawn from KALDI_ROOT/tools/config/command_path.sh
-# to add executable file to the PATH variable which is needed by our 
+# to add executable file to the PATH variable which is needed by ivector-PLDA and GMM-UBM systems 
 # Copyright: KALDI developers
 
 # we assume KALDI_ROOT is already defined
