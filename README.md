@@ -29,7 +29,7 @@ Tips drawn from Kaldi website: To build the toolkit: see the instructions in $KA
 6. Our provided voice datas are from LibriSpeech (LibriSpeech provides .flac format, we convert them into .wav format). To use out dataset, just untar the data.tgz. **Note that because Github has file size limit, we can only upload a small part of our used datas.**
 
 ## Tips
-1. run bulid_sok_models.py to generate speaker unique models for enrolled speaker in enrollment-set which are stored in model/.
+1. run bulid_spk_models.py to generate speaker unique models for enrolled speaker in enrollment-set which are stored in model/.
 2. run test.py to test the baseline performance of ivector-PLDA-based and GMM-UBM-based OSI, CSI, SV systems.
 3. run attackMain.sh to launch our attack FAKEBOB (generate adversarial voices). You can easily modify the parameters of our attack FAKEBOB in attackMain.sh. **Note: do not forget to modify the variable KALDI_ROOT in attackMain.sh to your root path of kaldi (the root path means the parent dir of egs, src, etc).**
 4. The iteration time depends on your machines. On our machine, about 12s for ivector-PLDA and 5s for GMM-UBM. You can adjust n_jobs and samples_per_draw to decrease the iteration time. But note that smaller samples_per_draw can leads to slower covergence and too great n_jobs may lower the speed in contrast.
