@@ -5,9 +5,7 @@ Paper link: [PrePrint Version](https://arxiv.org/abs/1911.01840 "PrePrint of Who
 
 Demonstration Website: [FAKEBOB Website](https://sites.google.com/view/fakebob/home "FAKEBOB Website")
 
-*************************
 ## Basic
-*************************
 #### Note that we have only tested our code on Ubuntu 16.04 system. It should work well as well on other Linux systems.
 
 Reproduce our experiment step by step:
@@ -56,9 +54,7 @@ As you can see, all of these systems are well-performed without attack.
 
 Since step 3 consumes quite a long time, you can choose to download ***pre-models.tgz*** from [pre-models.tgz, 493MB](https://drive.google.com/open?id=1T_hx9Pqopk-rlmiSrBWdXjl825wjBQVF "pre-models.tgz"). After downloading, just untar it to the location of FAKEBOB. Then you can skip both step 3 and step 4.
 
-*************************
 ## Extension
-************************
 If you would like to use your own dataset or attack other speaker recognition systems (e.g., DNN-based systems), here are some tips.
 
 > ### Use your own dataset  
@@ -74,7 +70,7 @@ The name of each sub-folder should be the unique speaker ID of the corresponding
 4. ***illegal-set***: each sub-folder contains voice datas of one imposter (imposters are not in enrollment-set).  
 The name of each sub-folder should be the unique speaker ID of the corresponding speaker.
 > ### Attack other speaker recognition systems  
-To generate adversarial voices on other speaker recognition systems using our attack FAKEBOB, what you need to do is quite simple: just wrap your system by providing two interface - function `score` and `make_decisions`. Please refer to `gmm_OSI.py`, `gmm_CSI.py`, `gmm_SV.py`, `iv_OSI.py`, `iv_CSI.py`, `iv_SV.py` for details about the input and output arguments.
+To generate adversarial voices on other speaker recognition systems using our attack FAKEBOB, what you need to do is quite simple: just wrap your system by providing two interface - function `score` and `make_decisions`. Please refer to `gmm_ubm_OSI.py`, `gmm_ubm_CSI.py`, `gmm_ubm_SV.py`, `ivector_PLDA_OSI.py`, `ivector_PLDA_CSI.py`, `ivector_PLDA_SV.py` for details about the input and output arguments.
 
 ### If you have any question, feel free to comment or contact.
 
