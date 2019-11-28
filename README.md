@@ -1,8 +1,6 @@
 # FAKEBOB
 Source code for paper "Who is real Bob? Adversarial Attacks on Speaker Recognition Systems".
 
-Paper link: [PrePrint Version](https://arxiv.org/abs/1911.01840 "PrePrint of Who is real Bob? Adversarial Attacks on Speaker Recognition Systems")
-
 Demonstration Website: [FAKEBOB Website](https://sites.google.com/view/fakebob/home "FAKEBOB Website")
 
 ## Basic
