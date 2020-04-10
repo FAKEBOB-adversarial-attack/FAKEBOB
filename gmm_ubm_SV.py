@@ -7,7 +7,7 @@ import copy
 
 class gmm_SV(object):
 
-    def __init__(self, spk_id, model, ubm, pre_model_dir="pre-models", threshold=None):
+    def __init__(self, spk_id, model, ubm, pre_model_dir="pre-models", threshold=0.0):
 
         self.pre_model_dir = os.path.abspath(pre_model_dir)
 
@@ -20,7 +20,7 @@ class gmm_SV(object):
         self.log_dir = os.path.abspath(self.spk_id + "/log")
         self.score_dir = os.path.abspath(self.spk_id + "/score")
 
-        self.threshold = threshold if threshold else model[5]
+        self.threshold = threshold
 
         self.utt_id = model[1]
         self.identity_location = model[2]

@@ -30,7 +30,7 @@ pre_model_dir = "pre-models"
 test_dir = "./data/test-set"
 illegal_dir = "./data/illegal-set"
 
-def load_model(spk_id_list, architecture, task, id):
+def load_model(spk_id_list, architecture, task, threshold, id):
 
     iv_model_paths = [os.path.join(model_dir, spk_id + ".iv") for spk_id in spk_id_list]
     gmm_model_paths = [os.path.join(model_dir, spk_id + ".gmm") for spk_id in spk_id_list]
@@ -53,7 +53,7 @@ def load_model(spk_id_list, architecture, task, id):
 
         if task == OSI:
 
-            model = iv_OSI(id, iv_model_list)
+            model = iv_OSI(id, iv_model_list, threshold=threshold)
 
         elif task == CSI:
 
@@ -61,13 +61,13 @@ def load_model(spk_id_list, architecture, task, id):
 
         else:
 
-            model = iv_SV(id, iv_model_list[0])
+            model = iv_SV(id, iv_model_list[0], threshold=threshold)
 
     else:
 
         if task == OSI:
 
-            model = gmm_OSI(id, gmm_model_list, ubm)
+            model = gmm_OSI(id, gmm_model_list, ubm, threshold=threshold)
 
         elif task == CSI:
 
@@ -75,7 +75,7 @@ def load_model(spk_id_list, architecture, task, id):
 
         else:
 
-            model = gmm_SV(id, gmm_model_list[0], ubm)
+            model = gmm_SV(id, gmm_model_list[0], ubm, threshold=threshold)
 
     return model
 
@@ -266,10 +266,7 @@ def loadData(task, attack_type, model, spk_id_list, n_jobs=10, debug=False):
 
         return audio_list, None, None, audio_names, adver_audio_paths, checkpoint_paths
 
-# def main(spk_id_list, architecture, task, attack_type, adver_thresh,
-#          epsilon, max_iter, max_lr, min_lr, samples_per_draw, sigma,
-#          momentum, plateau_length, plateau_drop, n_jobs, debug, start, end, step):
-def main(spk_id_list, architecture, task, attack_type, adver_thresh,
+def main(spk_id_list, architecture, task, threshold, attack_type, adver_thresh,
          epsilon, max_iter, max_lr, min_lr, samples_per_draw, sigma,
          momentum, plateau_length, plateau_drop, n_jobs, debug):
     
@@ -288,19 +285,12 @@ def main(spk_id_list, architecture, task, attack_type, adver_thresh,
         os.makedirs(adver_audio_dir)
     if not os.path.exists(checkpoint_dir):
         os.makedirs(checkpoint_dir)
-    
-    # global audio_names
-    # audio_names = []
-    # global adver_audio_paths
-    # adver_audio_paths = []
-    # global checkpoint_paths
-    # checkpoint_paths = []
 
     '''
     load model
     '''
     print('------ load model ------')
-    model = load_model(spk_id_list, architecture, task, id)
+    model = load_model(spk_id_list, architecture, task, threshold, id)
     print('------ load model done ------')
     
     '''
@@ -358,10 +348,11 @@ def main(spk_id_list, architecture, task, attack_type, adver_thresh,
     elif task == OSI:
         
         # first estimates the threshold
-        audio = audio_list[np.random.choice(total_cnt, 1)[0]] # randomly choose an audio to estimate the threshold
-        threshold_estimated, _, _ = fake_bob.estimate_threshold(audio, fs=fs, bits_per_sample=bits_per_sample, n_jobs=n_jobs, debug=debug)
+        # audio = audio_list[np.random.choice(total_cnt, 1)[0]] # randomly choose an audio to estimate the threshold
+        # threshold_estimated, _, _ = fake_bob.estimate_threshold(audio, fs=fs, bits_per_sample=bits_per_sample, n_jobs=n_jobs, debug=debug)
 
-        # threshold_estimated = 1.6
+        # threshold_estimated = 2.10 # iv-OSI
+        threshold_estimated = 0.23 # gmm-OSI
 
         if attack_type == TARGETED:
 
@@ -394,10 +385,11 @@ def main(spk_id_list, architecture, task, attack_type, adver_thresh,
 
     else:
         
-        audio = audio_list[np.random.choice(total_cnt, 1)[0]] # randomly choose an audio to estimate the threshold
-        threshold_estimated, _, _ = fake_bob.estimate_threshold(audio, fs=fs, bits_per_sample=bits_per_sample, n_jobs=n_jobs, debug=debug)
+        # audio = audio_list[np.random.choice(total_cnt, 1)[0]] # randomly choose an audio to estimate the threshold
+        # threshold_estimated, _, _ = fake_bob.estimate_threshold(audio, fs=fs, bits_per_sample=bits_per_sample, n_jobs=n_jobs, debug=debug)
         
-        # threshold_estimated = 1.6
+        # threshold_estimated = 1.83 # iv-SV
+        threshold_estimated = 0.15 # gmm-SV
 
         for audio, audio_name, \
             adver_audio_path, checkpoint_path in zip(audio_list, audio_names, 
@@ -436,11 +428,10 @@ if __name__ == "__main__":
     parser.add_argument("--plateau_drop", "-plateau_drop", default=2.0, type=float)
 
     parser.add_argument("--n_jobs", "-nj", default=10, type=int)
-    parser.add_argument("--debug", "-debug", default=False, type=bool)
+    # parser.add_argument("--debug", "-debug", default=False, type=bool)
+    parser.add_argument("--debug", "-debug", default="f", type=str, choices=["t", "f"]) # "f" for False, "t" for True
 
-    # parser.add_argument("--start", "-start", default=0, type=int)
-    # parser.add_argument("--end", "-end", default=-1, type=int)
-    # parser.add_argument("--step", "-step", default=1, type=int)
+    parser.add_argument("--threshold", "-thresh", default=0., type=float) # only meaningful for OSI and SV task
 
     args = parser.parse_args()
 
@@ -466,14 +457,13 @@ if __name__ == "__main__":
 
     n_jobs = args.n_jobs
     debug = args.debug
+    if debug == "f":
+        debug = False
+    else:
+        debug = True
 
-    # start = args.start
-    # end = args.stop
-    # step = args.step
+    threshold = args.threshold
 
-    # main(spk_id_list, architecture, task, attack_type, adver_thresh,
-    #      epsilon, max_iter, max_lr, min_lr, samples_per_draw, sigma,
-    #      momentum, plateau_length, plateau_drop, n_jobs, debug, start, end, step)
-    main(spk_id_list, architecture, task, attack_type, adver_thresh,
+    main(spk_id_list, architecture, task, threshold, attack_type, adver_thresh,
          epsilon, max_iter, max_lr, min_lr, samples_per_draw, sigma,
          momentum, plateau_length, plateau_drop, n_jobs, debug)

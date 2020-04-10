@@ -10,7 +10,7 @@ bits_per_sample = 16
 
 class iv_OSI:
 
-    def __init__(self, group_id, model_list, pre_model_dir="pre-models", threshold=None):
+    def __init__(self, group_id, model_list, pre_model_dir="pre-models", threshold=0.0):
         
         self.pre_model_dir = os.path.abspath(pre_model_dir)
 
@@ -23,7 +23,7 @@ class iv_OSI:
         self.log_dir = os.path.abspath(self.group_id + "/log")
         self.ivector_dir = os.path.abspath(self.group_id + "/ivector")
 
-        self.threshold = threshold if threshold else model_list[0][5]
+        self.threshold = threshold
 
         self.n_speakers = len(model_list)
         self.spk_ids = []

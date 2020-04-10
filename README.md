@@ -32,14 +32,23 @@ Reproduce our experiment step by step:
     - download data.tgz from [data.tgz, 920MB](https://drive.google.com/open?id=1oFCF3Ggw9xIyUDcYfmtUHd5ih1jUY79v "data.tgz").  
     - untar data.tgz to the location of FAKEBOB, after which you will see a new directory named *data/*.  
     Inside *data/*, there are four sub directories, i.e., *enrollment-set*, *z-norm-set*, *test-set* and *illegal-set*.
-6. Build speaker unique models for enrolled speakers in *enrollment-set*.  
+6. Setting the System Variable which ***kaldi*** relies on. 
+We have made it as simple as possible. 
+You just need to copy and paste all the commands in ***path_cmd.sh*** to your
+***~/.zshrc*** or ***~/.bashrc***. 
+Do not forget to modify **KALDI_ROOT** and **FAKEBOB_PATH** in ***path_cmd.sh***.
+    - vim ~/.zshrc
+    - modify **KALDI_ROOT** and **FAKEBOB_PATH** in ***path_cmd.sh***
+    - copy and paste all the commands to ~/.zshrc
+    - source ~/.zshrc
+7. Build speaker unique models for enrolled speakers in *enrollment-set*.  
     - Running the python file `build_spk_models.py`.   
     - After running completed, you will see several new directories, among which ***models/*** stores the speaker unique models of ivector-PLDA system (in the form of ID.iv) and GMM-UBM system (in the form of ID.gmm).
-7. Testing the baseline performance of ivector-PLDA-based and GMM-UBM-based OSI, CSI, SV systems.  
+8. Testing the baseline performance of ivector-PLDA-based and GMM-UBM-based OSI, CSI, SV systems.  
     - Running the python file `test.py`.  
     - During running, the baseline performance will be displayed in your terminal.  
 As you can see, all of these systems are well-performed without attack.
-8. Generate adversarial voices for speaker recognition systems (launch our attack FAKEBOB).
+9. Generate adversarial voices for speaker recognition systems (launch our attack FAKEBOB).
     - modify the variable KALDI_ROOT in ***attackMain.sh*** to your root path of kaldi.
     - adjust the parameters in ***attackMain.sh***.  
     For example, if you would like to launch targeted attack against ivector-PLDA-based CSI, just set `archi=iv, task=CSI,attack_type=targeted`.  
