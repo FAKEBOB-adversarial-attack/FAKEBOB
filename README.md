@@ -22,7 +22,7 @@ Reproduce our experiment step by step:
     - modify the variables **voxceleb1_root** and **voxceleb2_root** in line 19 and line 20 of **run.sh** to your actual location of datasets.  
     - run the shell scipt `./run.sh`. You may need to resolve permission denied problem by shell command `chmod 777 ./run.sh`
 4. After **egs/voxceleb/v1** recipe completes running, copy (or make soft link for) the following files or directories to the *pre-models* directory of this reposity.  
-    - change directory to your location of FAKEBOB and create a new directory named ***pre-models****.
+    - change directory to your location of FAKEBOB and create a new directory named ***pre-models***.
     - copy (or make soft link) *final.dubm*, *final.ubm*, *final.ie*, *delta_opts* in ***$KALDI_ROOT$/egs/voxceleb/v1/exp/extractor/*** to ***pre-models/***.  
     - copy (or make soft link) *plda*, *mean.vec*, *transform.mat* in ***voxceleb/v1/exp/ivectors_train/*** to ***pre-models/***.  
     - copy (or make soft link) *conf/* in ***voxceleb/v1*** to ***pre-models/***.  
