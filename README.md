@@ -3,6 +3,10 @@ Source code for paper "Who is real Bob? Adversarial Attacks on Speaker Recogniti
 
 Demonstration Website: [FAKEBOB Website](https://sites.google.com/view/fakebob/home "FAKEBOB Website")
 
+Our paper has been accepted by 42nd IEEE Symposium on Security and Privacy (**IEEE S&P, Oakland**), 2021.
+
+See preprint on [arxiv](https://arxiv.org/abs/1911.01840).
+
 ## Basic
 #### Note that we have only tested our code on Ubuntu 16.04 system. It should work well as well on other Linux systems.
 
@@ -14,7 +18,7 @@ Reproduce our experiment step by step:
     - Download kaldi from [Kaldi website](https://github.com/kaldi-asr/kaldi "kaldi website").  
     Let ***$KALDI_ROOT$*** be the root path of your download. Root path means the parent directory of src/, egs/, etc.
     - Add the C file **gmm-global-est-map.cc** in our reposity to ***$KALDI_ROOT$/src/gmmbin/***.  
-    This file will be complied to an executable file which is needed by GMM-UBM system.  
+    This file will be complied to an executable file which is needed by GMM-UBM system.
     - Build the toolkit according to the instruction in ***$KALDI_ROOT$/INSTALL***.
 3. After successfully building Kaldi toolkit, run the **egs/voxceleb/v1** recipe.  
     - download the VoxCeleb1 and VoxCeleb2 dataset from [VoxCeleb1 Dataset](http://www.robots.ox.ac.uk/~vgg/data/voxceleb/ "VoxCeleb1"), [VoxCeleb2 Dataset](http://www.robots.ox.ac.uk/~vgg/data/voxceleb2/ "VoxCeleb2").
