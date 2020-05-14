@@ -27,6 +27,9 @@ class gmm_SV(object):
         
         self.model_list = [ubm, self.identity_location] # add ubm
 
+        self.kaldi_helper = gmm_ubm_kaldiHelper(pre_model_dir=self.pre_model_dir, audio_dir=self.audio_dir,
+                                                mfcc_dir=self.mfcc_dir, log_dir=self.log_dir, score_dir=self.score_dir)
+
     def score(self, audios, fs=16000, bits_per_sample=16, debug=False, n_jobs=5):
 
         if os.path.exists(self.audio_dir):
@@ -63,10 +66,8 @@ class gmm_SV(object):
         for i, audio in enumerate(audio_list):
             if audio.dtype != np.int16:
                 audio_list[i] = (audio * (2 ** (bits_per_sample - 1))).astype(np.int16)
-    
-        kaldi_helper = gmm_ubm_kaldiHelper(pre_model_dir=self.pre_model_dir, audio_dir=self.audio_dir, mfcc_dir=self.mfcc_dir, log_dir=self.log_dir, score_dir=self.score_dir)
         
-        score_array = kaldi_helper.score(self.model_list, audio_list, fs=fs, n_jobs=n_jobs, debug=debug, bits_per_sample=bits_per_sample)
+        score_array = self.kaldi_helper.score(self.model_list, audio_list, fs=fs, n_jobs=n_jobs, debug=debug, bits_per_sample=bits_per_sample)
 
         final_score = score_array[:, 1] - score_array[:, 0] # (n_audos, )
 

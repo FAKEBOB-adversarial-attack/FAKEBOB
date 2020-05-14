@@ -37,6 +37,10 @@ class iv_SV:
         self.train_ivector_scp = self.spk_id + "/ivector.scp"
         np.savetxt(self.train_ivector_scp, np.concatenate((np.array([self.utt_id])[:, np.newaxis], np.array([self.identity_location])[:, np.newaxis]), axis=1), fmt="%s")
 
+        self.kaldi_helper = ivector_PLDA_kaldiHelper(pre_model_dir=self.pre_model_dir, audio_dir=self.audio_dir,
+                                                mfcc_dir=self.mfcc_dir, log_dir=self.log_dir,
+                                                ivector_dir=self.ivector_dir)
+
     def score(self, audio_list, fs=16000, bits_per_sample=16, n_jobs=10, debug=False):
         
 
@@ -70,10 +74,8 @@ class iv_SV:
         for i, audio in enumerate(audio_list):
             if not audio.dtype == np.int16:
                 audio_list[i] = (audio * (2 ** (bits_per_sample - 1))).astype(np.int16)
-        
-        kaldi_helper = ivector_PLDA_kaldiHelper(pre_model_dir=self.pre_model_dir, audio_dir=self.audio_dir, mfcc_dir=self.mfcc_dir, log_dir=self.log_dir, ivector_dir=self.ivector_dir)
 
-        score_array = kaldi_helper.score(audio_list, [self.utt_id], n_jobs=n_jobs, flag=1, train_ivector_scp=self.train_ivector_scp, debug=debug)
+        score_array = self.kaldi_helper.score(audio_list, [self.utt_id], n_jobs=n_jobs, flag=1, train_ivector_scp=self.train_ivector_scp, debug=debug)
 
         score_array = (score_array - self.z_norm_mean) / self.z_norm_std
 
