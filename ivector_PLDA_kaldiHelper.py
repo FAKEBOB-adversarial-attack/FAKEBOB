@@ -175,7 +175,7 @@ class ivector_PLDA_kaldiHelper:
         vad_dir = os.path.abspath(vad_dir) if vad_dir else self.mfcc_dir
         log_dir = os.path.abspath(log_dir) if log_dir else self.log_dir
 
-        vad_command = (self.pre_model_dir + "/sid/compute_vad_decision.sh --nj " + str(n_jobs) +
+        vad_command = (self.pre_model_dir + "/steps/compute_vad_decision.sh --nj " + str(n_jobs) +
                         " --cmd '$train_cmd' --vad-config " + vad_conf + " " +
                         audio_dir + " " + log_dir + " " + vad_dir)
         
