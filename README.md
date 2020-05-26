@@ -9,17 +9,12 @@ Paper link [Who is real Bob? Adversarial Attacks on Speaker Recognition Systems]
 
 Cite our paper as follow:
 
-
-    @article{chen2019real,
-
-         title={Who is Real Bob? Adversarial Attacks on Speaker Recognition Systems},
-  
-         author={Chen, Guangke and Chen, Sen and Fan, Lingling and Du, Xiaoning and Zhao, Zhe and Song, Fu and Liu, Yang},
-  
-         journal={arXiv preprint arXiv:1911.01840},
-  
-         year={2019}
-    }
+    @inproceedings{chen2019real,
+                   title={Who is Real Bob? Adversarial Attacks on Speaker Recognition Systems},
+                   author={Chen, Guangke and Chen, Sen and Fan, Lingling and Du, Xiaoning and Zhao, Zhe and Song, Fu and Liu, Yang},
+                   booktitle={Process dings of the 42nd IEEE Symposium on Security and Privacy (IEEE S&P, Oakland)},
+                   year={2021}
+        }
 
 ## Basic
 #### Note that we have only tested our code on Ubuntu 16.04 system. It should work well as well on other Linux systems.
