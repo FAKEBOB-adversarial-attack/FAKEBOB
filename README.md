@@ -12,9 +12,9 @@ Cite our paper as follow:
     @inproceedings{chen2019real,
                    title={Who is Real Bob? Adversarial Attacks on Speaker Recognition Systems},
                    author={Chen, Guangke and Chen, Sen and Fan, Lingling and Du, Xiaoning and Zhao, Zhe and Song, Fu and Liu, Yang},
-                   booktitle={Process dings of the 42nd IEEE Symposium on Security and Privacy (IEEE S&P, Oakland)},
+                   booktitle={Processdings of the 42nd IEEE Symposium on Security and Privacy (IEEE S&P, Oakland)},
                    year={2021}
-        }
+    }
 
 ## Basic
 #### Note that we have only tested our code on Ubuntu 16.04 system. It should work well as well on other Linux systems.
