@@ -5,7 +5,21 @@ Demonstration Website: [FAKEBOB Website](https://sites.google.com/view/fakebob/h
 
 Our paper has been accepted by 42nd IEEE Symposium on Security and Privacy (**IEEE S&P, Oakland**), 2021.
 
-See preprint on [arxiv](https://arxiv.org/abs/1911.01840).
+Paper link [Who is real Bob? Adversarial Attacks on Speaker Recognition Systems](https://arxiv.org/abs/1911.01840).
+
+Cite our paper as follow:
+
+
+    @article{chen2019real,
+
+         title={Who is Real Bob? Adversarial Attacks on Speaker Recognition Systems},
+  
+         author={Chen, Guangke and Chen, Sen and Fan, Lingling and Du, Xiaoning and Zhao, Zhe and Song, Fu and Liu, Yang},
+  
+         journal={arXiv preprint arXiv:1911.01840},
+  
+         year={2019}
+    }
 
 ## Basic
 #### Note that we have only tested our code on Ubuntu 16.04 system. It should work well as well on other Linux systems.
