@@ -1,4 +1,9 @@
 
+## Copyright (C) 2019, Guangke Chen <gkchen.shanghaitech@gmail.com>.
+## This program is licenced under the BSD 2-Clause licence
+## contained in the LICENCE file in this directory.
+
+
 spk_ids="1580 2830 4446 5142 61"
 
 archi=gmm

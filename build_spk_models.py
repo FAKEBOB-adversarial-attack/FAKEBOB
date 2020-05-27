@@ -1,3 +1,9 @@
+
+## Copyright (C) 2019, Guangke Chen <gkchen.shanghaitech@gmail.com>.
+## This program is licenced under the BSD 2-Clause licence
+## contained in the LICENCE file in this directory.
+
+
 from ivector_PLDA_kaldiHelper import ivector_PLDA_kaldiHelper
 from gmm_ubm_kaldiHelper import gmm_ubm_kaldiHelper
 import os

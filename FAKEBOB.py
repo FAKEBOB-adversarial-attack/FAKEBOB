@@ -1,8 +1,12 @@
 
-'''
-Note: Some of the codes in this .py file are inspired by
-https://github.com/labsix/limitedblackbox-attacks
-'''
+## Copyright (C) 2019, Guangke Chen <gkchen.shanghaitech@gmail.com>.
+## This program is licenced under the BSD 2-Clause licence
+## contained in the LICENCE file in this directory.
+
+
+# Note: Some of the codes in this .py file are inspired by
+# https://github.com/labsix/limitedblackbox-attacks
+
 
 import copy
 import pickle

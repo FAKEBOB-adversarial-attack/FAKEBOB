@@ -1,4 +1,9 @@
 
+## Copyright (C) 2019, Guangke Chen <gkchen.shanghaitech@gmail.com>.
+## This program is licenced under the BSD 2-Clause licence
+## contained in the LICENCE file in this directory.
+
+
 import argparse
 import os
 import pickle

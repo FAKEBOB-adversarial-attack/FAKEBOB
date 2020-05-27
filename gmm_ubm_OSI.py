@@ -1,4 +1,9 @@
 
+## Copyright (C) 2019, Guangke Chen <gkchen.shanghaitech@gmail.com>.
+## This program is licenced under the BSD 2-Clause licence
+## contained in the LICENCE file in this directory.
+
+
 import numpy as np
 import os
 from gmm_ubm_kaldiHelper import gmm_ubm_kaldiHelper
