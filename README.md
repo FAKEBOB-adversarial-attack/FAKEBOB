@@ -29,7 +29,7 @@ Reproduce our experiment step by step:
     - Add the C file **gmm-global-est-map.cc** in our reposity to ***$KALDI_ROOT$/src/gmmbin/***.  
     This file will be complied to an executable file which is needed by GMM-UBM system.
     - Edit the file ***$KALDI_ROOT$/src/gmmbin/Makefile*** by adding **gmm-global-get-frame-likes-component** to **BINFILES** list.
-     If not, **gmm-global-est-map.cc** will not by compiled to executable file.
+     If not, **gmm-global-est-map.cc** will not be compiled to executable file.
     - Build the toolkit according to the instruction in ***$KALDI_ROOT$/INSTALL***.
 3. After successfully building Kaldi toolkit, run the **egs/voxceleb/v1** recipe.  
     - download the VoxCeleb1 and VoxCeleb2 dataset from [VoxCeleb1 Dataset](http://www.robots.ox.ac.uk/~vgg/data/voxceleb/ "VoxCeleb1"), [VoxCeleb2 Dataset](http://www.robots.ox.ac.uk/~vgg/data/voxceleb2/ "VoxCeleb2").
