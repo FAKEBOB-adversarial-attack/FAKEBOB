@@ -44,7 +44,8 @@ Reproduce our experiment step by step:
     - copy (or make soft link) *sid/*, *steps/*, *utils/* in ***voxceleb/v1*** to ***pre-models/***.
 
 5. Downoad our dataset. Our used dataset comes from **LibriSpeech**. We just select part of it and convert the *.flac* format to *.wav* format.  
-    - download data.tgz from [data.tgz, 920MB](https://drive.google.com/open?id=1oFCF3Ggw9xIyUDcYfmtUHd5ih1jUY79v "data.tgz").  
+    - download data.tgz from [data.tgz, 920MB](https://drive.google.com/open?id=1oFCF3Ggw9xIyUDcYfmtUHd5ih1jUY79v "data.tgz"). 
+      Make sure you have downloaded it correctly by checking its MD5: **1897f23e9628cc54bdbf455998ce11c2**
     - untar data.tgz to the location of FAKEBOB, after which you will see a new directory named *data/*.  
     Inside *data/*, there are four sub directories, i.e., *enrollment-set*, *z-norm-set*, *test-set* and *illegal-set*.
 6. Setting the System Variable which ***kaldi*** relies on. 
@@ -74,7 +75,7 @@ As you can see, all of these systems are well-performed without attack.
     You can adjust `n_jobs` and `samples_per_draw` to decrease this time.  
     But note that smaller `samples_per_draw` may lead to slower covergence and too large `n_jobs` may increase the time in contrast.
 
-Since step 3 consumes quite a long time, you can choose to download ***pre-models.tgz*** from [pre-models.tgz, 493MB](https://drive.google.com/open?id=1T_hx9Pqopk-rlmiSrBWdXjl825wjBQVF "pre-models.tgz"). After downloading, just untar it to the location of FAKEBOB. Then you can skip both step 3 and step 4.
+Since step 3 consumes quite a long time, you can choose to download ***pre-models.tgz*** from [pre-models.tgz, 493MB](https://drive.google.com/open?id=1T_hx9Pqopk-rlmiSrBWdXjl825wjBQVF "pre-models.tgz"). The MD5 should be **a61fd0f2a470eb6f9bdba11f5b71a123**. After downloading, just untar it to the location of FAKEBOB. Then you can skip both step 3 and step 4.
 
 ## Extension
 If you would like to use your own dataset or attack other speaker recognition systems (e.g., DNN-based systems), here are some tips.
