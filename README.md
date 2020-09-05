@@ -3,7 +3,7 @@ Source code for paper "Who is real Bob? Adversarial Attacks on Speaker Recogniti
 
 Demonstration Website: [FAKEBOB Website](https://sites.google.com/view/fakebob/home "FAKEBOB Website") (including a One-Minute Video Preview)
 
-Our paper has been accepted by 42nd IEEE Symposium on Security and Privacy (**IEEE S&P, Oakland**), 2021.
+Our paper has been accepted by [42nd IEEE Symposium on Security and Privacy (**IEEE S&P, Oakland**), 2021](https://www.ieee-security.org/TC/SP2021/program-papers.html).
 
 Paper link [Who is real Bob? Adversarial Attacks on Speaker Recognition Systems](https://arxiv.org/abs/1911.01840).
 
