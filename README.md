@@ -12,7 +12,7 @@ Cite our paper as follow:
     @inproceedings{chen2019real,
                    title={Who is Real Bob? Adversarial Attacks on Speaker Recognition Systems},
                    author={Chen, Guangke and Chen, Sen and Fan, Lingling and Du, Xiaoning and Zhao, Zhe and Song, Fu and Liu, Yang},
-                   booktitle={Processdings of the 42nd IEEE Symposium on Security and Privacy (IEEE S&P, Oakland)},
+                   booktitle={Proceedings of the 42nd IEEE Symposium on Security and Privacy (IEEE S&P, Oakland)},
                    year={2021}
     }
 
