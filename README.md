@@ -27,7 +27,7 @@ Reproduce our experiment step by step:
     - Download kaldi from [Kaldi website](https://github.com/kaldi-asr/kaldi "kaldi website").  
     Let ***$KALDI_ROOT$*** be the root path of your download. Root path means the parent directory of src/, egs/, etc.
     - Add the C file **gmm-global-est-map.cc** in our reposity to ***$KALDI_ROOT$/src/gmmbin/***.  
-    This file will be complied to an executable file which is needed by GMM-UBM system.
+    This file will be compiled to an executable file which is needed by GMM-UBM system.
     - Edit the file ***$KALDI_ROOT$/src/gmmbin/Makefile*** by adding **gmm-global-est-map** to **BINFILES** list.
      If not, **gmm-global-est-map.cc** will not be compiled to executable file.
     - Build the toolkit according to the instruction in ***$KALDI_ROOT$/INSTALL***.
