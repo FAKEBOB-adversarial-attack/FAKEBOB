@@ -44,7 +44,7 @@ Reproduce our experiment step by step:
     - copy (or make soft link) *sid/*, *steps/*, *utils/* in ***voxceleb/v1*** to ***pre-models/***.
 
 5. Downoad our dataset. Our used dataset comes from **LibriSpeech**. We just select part of it and convert the *.flac* format to *.wav* format.  
-    - download data.tgz from [data.tar.gz, 921MB](https://drive.google.com/file/d/1oFCF3Ggw9xIyUDcYfmtUHd5ih1jUY79v/view?usp=sharing).
+    - download data.tgz from [data.tar.gz, 921MB](https://drive.google.com/file/d/1nEcobGN7_8yyYwdqs1c6XD1UTXqEyhQC/view?usp=sharing).
       Make sure you have downloaded it correctly by checking its MD5: **43934261ea3e200064f00573ada01d6d**
     - untar data.tgz to the location of FAKEBOB, after which you will see a new directory named *data/*.  
     Inside *data/*, there are four sub directories, i.e., *enrollment-set*, *z-norm-set*, *test-set* and *illegal-set*.
