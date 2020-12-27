@@ -17,7 +17,7 @@ Cite our paper as follow:
     }
 
 ## Basic
-#### Note that we have only tested our code on Ubuntu 16.04 system. It should work well as well on other Linux systems.
+#### Note that we have only tested our code on Ubuntu 16.04 system. It should work well as well on other Linux systems. Currently this project does NOT support and use GPU. It is our plan to release GPU version of this project. Stay tuned.
 
 Reproduce our experiment step by step:
 1. Install Python 3.  
