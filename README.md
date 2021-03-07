@@ -21,11 +21,11 @@ You can either use the docker environment (recommended) or follow the manual ins
 
 ### Docker installation
 #### Setup
-To set up the environment, run `./setup.sh`.
+To set up the environment, run `docker/setup.sh`.
 This will build the docker environment and download all files.
 
 #### Using the docker environment
-After the setup is complete, you should be able to enter the docker environment by running `docker/run.sh` (this assumes you are in the root of the project).
+After the setup is complete, you should be able to enter the docker environment by running `docker/run.sh`.
 
 #### Testing the setup
 Run `docker/run.sh` and then inside the docker environment`python3 test.py`.
