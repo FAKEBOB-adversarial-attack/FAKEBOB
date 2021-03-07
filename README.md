@@ -28,7 +28,7 @@ This will build the docker environment and download all files.
 After the setup is complete, you should be able to enter the docker environment by running `docker/run.sh`.
 
 #### Testing the setup
-Run `docker/run.sh` and then inside the docker environment`python3 test.py`.
+Run `docker/run.sh` and then inside the docker environment `python3 test.py`.
 Alternatively you can run `docker/run.sh python3 test.py` to run the command in the docker environment.
 The `test.py` script will show you the baseline performance.
 
