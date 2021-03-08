@@ -21,5 +21,6 @@ export PATH=$FAKEBOB_PATH/pre-models/utils/:$KALDI_ROOT/tools/openfst/bin:$KALDI
 . $KALDI_ROOT/tools/config/common_path.sh; \
 export LC_ALL=C; \
 export train_cmd="run.pl --mem 4G"; \
+alias python python3; \
 cd /mounted; \
 '"$command_to_execute"
