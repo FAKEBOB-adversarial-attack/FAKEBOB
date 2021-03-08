@@ -35,7 +35,7 @@ n_jobs=5
 debug=f # "f" for False, "t" for True
 #debug=t
 
-python attackMain.py -spk_id $spk_ids -archi $archi -task $task -type $attack_type \
+python3 attackMain.py -spk_id $spk_ids -archi $archi -task $task -type $attack_type \
 -adver $adver_thresh -epsilon $epsilon -max_iter $max_iter -max_lr $max_lr \
 -min_lr $min_lr -samples $samples -sigma $sigma -momentum $momentum \
 -plateau_length $plateau_length -plateau_drop $plateau_drop \
