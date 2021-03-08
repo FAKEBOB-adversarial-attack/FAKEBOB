@@ -16,7 +16,7 @@ from scipy.io.wavfile import read
 import pickle
 
 debug = False
-n_jobs = 30
+n_jobs = 4
 
 test_dir = "./data/test-set"
 illegal_dir = "./data/illegal-set"
