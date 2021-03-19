@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 if [[ $(basename $(realpath .)) == "docker" ]]
 then
     cd ..
