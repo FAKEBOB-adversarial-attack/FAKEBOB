@@ -32,7 +32,7 @@ remarks:
 
 ''' adjustable setting
 '''
-n_jobs = 28
+n_jobs = 1
 debug = False  # whether display log information from kaldi on terminal
 
 enroll_dir = "./data/enrollment-set"  # voice data for enrollment

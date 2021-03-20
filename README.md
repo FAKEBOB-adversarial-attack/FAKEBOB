@@ -17,6 +17,27 @@ Cite our paper as follow:
     }
 
 ## Basic
+You can either use the docker environment (recommended) or follow the manual installation.
+
+### Docker installation
+#### Setup
+To set up the environment, run `docker/setup.sh`.
+This will build the docker environment and download all files.
+
+#### Using the docker environment
+After the setup is complete, you should be able to enter the docker environment by running `docker/run.sh`.
+
+#### Testing the setup
+Run `docker/run.sh` and then inside the docker environment `python3 test.py`.
+Alternatively you can run `docker/run.sh python3 test.py` to run the command in the docker environment.
+The `test.py` script will show you the baseline performance.
+
+#### Generating adversarial voices
+Run `docker/run.sh` and then `./attackMain.sh` or run `docker/run.sh ./attackMain.sh`.
+You can find details in step nine of the manual installation.
+
+
+### Manual installation
 #### Note that we have only tested our code on Ubuntu 16.04 system. It should work well as well on other Linux systems. Currently this project does NOT support and use GPU. It is our plan to release GPU version of this project. Stay tuned.
 
 Reproduce our experiment step by step:
