@@ -42,7 +42,7 @@ You can find details in step nine of the manual installation.
 
 Reproduce our experiment step by step:
 1. Install Python 3.  
-    - Required packages: numpy, scipy, shlex, shutil.  
+    - Required packages: numpy, scipy.  
     - We recommend using Anaconda and Python Virtual Enviroment.
 2. Download and install Kaldi Toolkit.
     - Download kaldi from [Kaldi website](https://github.com/kaldi-asr/kaldi "kaldi website").  
