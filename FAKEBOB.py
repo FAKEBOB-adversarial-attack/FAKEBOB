@@ -255,11 +255,13 @@ class FakeBob(object):
                 score_other = np.delete(score, self.target, axis=1) #score_other is (samples_per_draw + 1, n_speakers-1)
                 score_other_max = np.max(score_other, axis=1, keepdims=True) # score_real is (samples_per_draw + 1, 1)
                 score_target = score[:, self.target:self.target+1] # score_target is (samples_per_draw + 1, 1)
-                loss = np.maximum(np.maximum(score_other_max, self.threshold) - score_target, -1 * self.adver_thresh)
+                # loss = np.maximum(np.maximum(score_other_max, self.threshold) - score_target, -1 * self.adver_thresh)
+                loss = np.maximum(score_other_max, self.threshold) + self.adver_thresh - score_target
 
             else: 
                 score_max = np.max(score, axis=1, keepdims=True) # (samples_per_draw + 1, 1)
-                loss = np.maximum(self.threshold - score_max, -1 * self.adver_thresh)
+                # loss = np.maximum(self.threshold - score_max, -1 * self.adver_thresh)
+                loss = self.threshold + self.adver_thresh - score_max
         
         elif self.task == "CSI": # score is (samples_per_draw + 1, n_spks)
 
@@ -268,17 +270,20 @@ class FakeBob(object):
                 score_other = np.delete(score, self.target, axis=1) #score_other is (samples_per_draw + 1, n_speakers-1)
                 score_other_max = np.max(score_other, axis=1, keepdims=True) # score_real is (samples_per_draw + 1, 1)
                 score_target = score[:, self.target:self.target+1] # score_target is (samples_per_draw + 1, 1)
-                loss = np.maximum(score_other_max - score_target, -1 * self.adver_thresh)
+                # loss = np.maximum(score_other_max - score_target, -1 * self.adver_thresh)
+                loss = score_other_max + self.adver_thresh - score_target
             
             else:
 
                 score_other = np.delete(score, self.true, axis=1) #score_other is (samples_per_draw + 1, n_speakers-1)
                 score_other_max = np.max(score_other, axis=1, keepdims=True) # score_real is (samples_per_draw + 1, 1)
                 score_true = score[:, self.true:self.true+1] # score_target is (samples_per_draw + 1, 1)
-                loss = np.maximum(score_true - score_other_max, -1 * self.adver_thresh)
+                # loss = np.maximum(score_true - score_other_max, -1 * self.adver_thresh)
+                loss = score_true + self.adver_thresh - score_other_max
         
         else: # score is (samples_per_draw + 1, )
 
-            loss = np.maximum(self.threshold - score[:, np.newaxis], -1 * self.adver_thresh)
+            # loss = np.maximum(self.threshold - score[:, np.newaxis], -1 * self.adver_thresh)
+            loss = self.threshold + self.adver_thresh - score[:, np.newaxis]
 
         return loss, score # loss is (samples_per_draw + 1, 1)
