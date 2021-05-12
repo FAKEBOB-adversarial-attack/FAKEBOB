@@ -177,7 +177,8 @@ class FakeBob(object):
 
             distance = np.max(np.abs(audio - adver))
             print("--- iter %d, distance:%f, loss:%f, score: ---" % (iter, distance, adver_loss), score)
-            if adver_loss == -1 * self.adver_thresh:
+            # if adver_loss == -1 * self.adver_thresh: # early stop condition for loss function with outermost maximum operation
+            if adver_loss < 0: # early stop condition for loss function without outermost maximum operation
                 print("------ early stop at iter %d ---" % iter)
 
                 cp_local.append(distance)
@@ -255,11 +256,15 @@ class FakeBob(object):
                 score_other = np.delete(score, self.target, axis=1) #score_other is (samples_per_draw + 1, n_speakers-1)
                 score_other_max = np.max(score_other, axis=1, keepdims=True) # score_real is (samples_per_draw + 1, 1)
                 score_target = score[:, self.target:self.target+1] # score_target is (samples_per_draw + 1, 1)
+                # the outermost maximum operation in the loss function will cause unexpected issue for benign voices whose initial loss is slightly larger than adver_thresh.
+                # see README for detail
                 # loss = np.maximum(np.maximum(score_other_max, self.threshold) - score_target, -1 * self.adver_thresh)
                 loss = np.maximum(score_other_max, self.threshold) + self.adver_thresh - score_target
 
             else: 
                 score_max = np.max(score, axis=1, keepdims=True) # (samples_per_draw + 1, 1)
+                # the outermost maximum operation in the loss function will cause unexpected issue for benign voices whose initial loss is slightly larger than adver_thresh.
+                # see README for detail
                 # loss = np.maximum(self.threshold - score_max, -1 * self.adver_thresh)
                 loss = self.threshold + self.adver_thresh - score_max
         
@@ -270,6 +275,8 @@ class FakeBob(object):
                 score_other = np.delete(score, self.target, axis=1) #score_other is (samples_per_draw + 1, n_speakers-1)
                 score_other_max = np.max(score_other, axis=1, keepdims=True) # score_real is (samples_per_draw + 1, 1)
                 score_target = score[:, self.target:self.target+1] # score_target is (samples_per_draw + 1, 1)
+                # the outermost maximum operation in the loss function will cause unexpected issue for benign voices whose initial loss is slightly larger than adver_thresh.
+                # see README for detail
                 # loss = np.maximum(score_other_max - score_target, -1 * self.adver_thresh)
                 loss = score_other_max + self.adver_thresh - score_target
             
@@ -278,11 +285,14 @@ class FakeBob(object):
                 score_other = np.delete(score, self.true, axis=1) #score_other is (samples_per_draw + 1, n_speakers-1)
                 score_other_max = np.max(score_other, axis=1, keepdims=True) # score_real is (samples_per_draw + 1, 1)
                 score_true = score[:, self.true:self.true+1] # score_target is (samples_per_draw + 1, 1)
+                # the outermost maximum operation in the loss function will cause unexpected issue for benign voices whose initial loss is slightly larger than adver_thresh.
+                # see README for detail
                 # loss = np.maximum(score_true - score_other_max, -1 * self.adver_thresh)
                 loss = score_true + self.adver_thresh - score_other_max
         
         else: # score is (samples_per_draw + 1, )
-
+            # the outermost maximum operation in the loss function will cause unexpected issue for benign voices whose initial loss is slightly larger than adver_thresh.
+            # see README for detail
             # loss = np.maximum(self.threshold - score[:, np.newaxis], -1 * self.adver_thresh)
             loss = self.threshold + self.adver_thresh - score[:, np.newaxis]
 
