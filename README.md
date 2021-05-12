@@ -7,6 +7,10 @@ Our paper has been accepted by [42nd IEEE Symposium on Security and Privacy (**I
 
 Paper link [Who is real Bob? Adversarial Attacks on Speaker Recognition Systems](https://arxiv.org/abs/1911.01840).
 
+Oakland 2021 Presentation Slide [Session #5-GuangkeChen-WhoisRealBob](http://guangkechen.site/publication/sp2021-fakebob/final-version-2-Session-5-GuangkeChen-WhoisRealBob.pdf)
+
+Oakland 2021 Talk Video: Stay Tuned.
+
 Cite our paper as follow:
 
     @INPROCEEDINGS {chen2019real,
