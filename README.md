@@ -9,7 +9,7 @@ Paper link [Who is real Bob? Adversarial Attacks on Speaker Recognition Systems]
 
 Oakland 2021 Presentation Slide [Session #5-GuangkeChen-WhoisRealBob](http://guangkechen.site/publication/sp2021-fakebob/final-version-2-Session-5-GuangkeChen-WhoisRealBob.pdf)
 
-Oakland 2021 Talk Video: Stay Tuned.
+Oakland 2021 Talk Video: [Presentation Video](https://youtu.be/ZRfkcojsUD4)
 
 Cite our paper as follow:
 
