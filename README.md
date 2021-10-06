@@ -15,18 +15,12 @@ Cite our paper as follow:
 
     @INPROCEEDINGS {chen2019real,
         author = {G. Chen and S. Chen and L. Fan and X. Du and Z. Zhao and F. Song and Y. Liu},
-        booktitle = {2021 2021 IEEE Symposium on Security and Privacy (SP)},
+        booktitle = {2021 IEEE Symposium on Security and Privacy (SP)},
         title = {Who is Real Bob? Adversarial Attacks on Speaker Recognition Systems},
         year = {2021},
-        volume = {},
         issn = {2375-1207},
         pages = {55-72},
-        keywords = {adversarial-attack;speaker-recognition;speaker-identification;speaker-verification},
         doi = {10.1109/SP40001.2021.00004},
-        url = {https://doi.ieeecomputersociety.org/10.1109/SP40001.2021.00004},
-        publisher = {IEEE Computer Society},
-        address = {Los Alamitos, CA, USA},
-        month = {may}
     }
 
 ## New ##
