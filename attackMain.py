@@ -353,11 +353,11 @@ def main(spk_id_list, architecture, task, threshold, attack_type, adver_thresh,
     elif task == OSI:
         
         # first estimates the threshold
-        # audio = audio_list[np.random.choice(total_cnt, 1)[0]] # randomly choose an audio to estimate the threshold
-        # threshold_estimated, _, _ = fake_bob.estimate_threshold(audio, fs=fs, bits_per_sample=bits_per_sample, n_jobs=n_jobs, debug=debug)
+        audio = audio_list[np.random.choice(total_cnt, 1)[0]] # randomly choose an audio to estimate the threshold
+        threshold_estimated, _, _ = fake_bob.estimate_threshold(audio, fs=fs, bits_per_sample=bits_per_sample, n_jobs=n_jobs, debug=debug)
 
         # threshold_estimated = 2.10 # iv-OSI
-        threshold_estimated = 0.23 # gmm-OSI
+        # threshold_estimated = 0.23 # gmm-OSI
 
         if attack_type == TARGETED:
 
@@ -390,11 +390,11 @@ def main(spk_id_list, architecture, task, threshold, attack_type, adver_thresh,
 
     else:
         
-        # audio = audio_list[np.random.choice(total_cnt, 1)[0]] # randomly choose an audio to estimate the threshold
-        # threshold_estimated, _, _ = fake_bob.estimate_threshold(audio, fs=fs, bits_per_sample=bits_per_sample, n_jobs=n_jobs, debug=debug)
+        audio = audio_list[np.random.choice(total_cnt, 1)[0]] # randomly choose an audio to estimate the threshold
+        threshold_estimated, _, _ = fake_bob.estimate_threshold(audio, fs=fs, bits_per_sample=bits_per_sample, n_jobs=n_jobs, debug=debug)
         
         # threshold_estimated = 1.83 # iv-SV
-        threshold_estimated = 0.15 # gmm-SV
+        # threshold_estimated = 0.15 # gmm-SV
 
         for audio, audio_name, \
             adver_audio_path, checkpoint_path in zip(audio_list, audio_names, 
