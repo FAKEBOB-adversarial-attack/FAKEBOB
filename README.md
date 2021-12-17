@@ -99,8 +99,9 @@ Do not forget to modify **KALDI_ROOT** and **FAKEBOB_PATH** in ***path_cmd.sh***
     - If you work on a server with multiple cores, you'd better set n_jobs (Line 35) to a larger number to speed up the computation. But be cautious about the value since the program will crash with a too large value for n_job.  
 8. Testing the baseline performance of ivector-PLDA-based and GMM-UBM-based OSI, CSI, SV systems.  
     - Running the python file `test.py`.  
-    - During running, the baseline performance will be displayed in your terminal.  
-As you can see, all of these systems are well-performed without attack.
+    - During running, the baseline performance will be displayed in your terminal. As you can see, all of these systems are well-performed without attack.
+    - Again, if you work on a server with multiple cores, you'd better set n_jobs (Line 19) to a larger number to speed up the computation.
+
 9. Generate adversarial voices for speaker recognition systems (launch our attack FAKEBOB).
     - modify the variable KALDI_ROOT in ***attackMain.sh*** to your root path of kaldi.
     - adjust the parameters in ***attackMain.sh***.  
