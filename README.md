@@ -96,6 +96,7 @@ Do not forget to modify **KALDI_ROOT** and **FAKEBOB_PATH** in ***path_cmd.sh***
 7. Build speaker unique models for enrolled speakers in *enrollment-set*.  
     - Running the python file `build_spk_models.py`.   
     - After running completed, you will see several new directories, among which ***models/*** stores the speaker unique models of ivector-PLDA system (in the form of ID.iv) and GMM-UBM system (in the form of ID.gmm).
+    - If you work on a server with multiple cores, you'd better set n_jobs (Line 35) to a larger number to speed up the computation. But be cautious about the value since the program will crash with a too large value for n_job.  
 8. Testing the baseline performance of ivector-PLDA-based and GMM-UBM-based OSI, CSI, SV systems.  
     - Running the python file `test.py`.  
     - During running, the baseline performance will be displayed in your terminal.  
