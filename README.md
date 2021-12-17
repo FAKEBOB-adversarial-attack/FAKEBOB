@@ -112,6 +112,7 @@ Do not forget to modify **KALDI_ROOT** and **FAKEBOB_PATH** in ***path_cmd.sh***
     On our machine, about 12s for ivector-PLDA and 5s for GMM-UBM.  
     You can adjust `n_jobs` and `samples_per_draw` to decrease this time.  
     But note that smaller `samples_per_draw` may lead to slower covergence and too large `n_jobs` may increase the time in contrast.
+    - For SV/OSI task, by default the attack will first estimate the threshold which is used for crafting adversarial examples. If you wish to skip the threshold estimation, you can use the hard-code threshold (see Line 356-360 and Line 393-397 in attackMain.py).
 
 Since step 3 consumes quite a long time, you can choose to download ***pre-models.tgz*** from [pre-models.tgz, 493MB](https://drive.google.com/open?id=1T_hx9Pqopk-rlmiSrBWdXjl825wjBQVF "pre-models.tgz"). The MD5 should be **a61fd0f2a470eb6f9bdba11f5b71a123**. After downloading, just untar it to the location of FAKEBOB. Then you can skip both step 3 and step 4.
 
