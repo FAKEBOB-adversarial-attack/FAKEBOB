@@ -61,12 +61,12 @@ Reproduce our experiment step by step:
     - We recommend using Anaconda and Python Virtual Enviroment.
 2. Download and install Kaldi Toolkit.
     - Download kaldi from [Kaldi website](https://github.com/kaldi-asr/kaldi "kaldi website").  
-    Let ***$KALDI_ROOT$*** be the root path of your download. Root path means the parent directory of src/, egs/, etc.
-    - Add the C file **gmm-global-est-map.cc** in our reposity to ***$KALDI_ROOT$/src/gmmbin/***.  
+    Let ***$KALDI_ROOT*** be the root path of your download. Root path means the parent directory of src/, egs/, etc.
+    - Add the C file **gmm-global-est-map.cc** in our reposity to ***$KALDI_ROOT/src/gmmbin/***.  
     This file will be compiled to an executable file which is needed by GMM-UBM system.
-    - Edit the file ***$KALDI_ROOT$/src/gmmbin/Makefile*** by adding **gmm-global-est-map** to **BINFILES** list.
+    - Edit the file ***$KALDI_ROOT/src/gmmbin/Makefile*** by adding **gmm-global-est-map** to **BINFILES** list.
      If not, **gmm-global-est-map.cc** will not be compiled to executable file.
-    - Build the toolkit according to the instruction in ***$KALDI_ROOT$/INSTALL***.
+    - Build the toolkit according to the instruction in ***$KALDI_ROOT/INSTALL***.
 3. After successfully building Kaldi toolkit, run the **egs/voxceleb/v1** recipe.  
     - download the VoxCeleb1 and VoxCeleb2 dataset from [VoxCeleb1 Dataset](http://www.robots.ox.ac.uk/~vgg/data/voxceleb/ "VoxCeleb1"), [VoxCeleb2 Dataset](http://www.robots.ox.ac.uk/~vgg/data/voxceleb2/ "VoxCeleb2").
     - change directory to egs/voxceleb/v1.  
@@ -74,7 +74,7 @@ Reproduce our experiment step by step:
     - run the shell scipt `./run.sh`. You may need to resolve permission denied problem by shell command `chmod 777 ./run.sh`
 4. After **egs/voxceleb/v1** recipe completes running, copy (or make soft link for) the following files or directories to the *pre-models* directory of this reposity.  
     - change directory to your location of FAKEBOB and create a new directory named ***pre-models***.
-    - copy (or make soft link) *final.dubm*, *final.ubm*, *final.ie*, *delta_opts* in ***$KALDI_ROOT$/egs/voxceleb/v1/exp/extractor/*** to ***pre-models/***.  
+    - copy (or make soft link) *final.dubm*, *final.ubm*, *final.ie*, *delta_opts* in ***$KALDI_ROOT/egs/voxceleb/v1/exp/extractor/*** to ***pre-models/***.  
     - copy (or make soft link) *plda*, *mean.vec*, *transform.mat* in ***voxceleb/v1/exp/ivectors_train/*** to ***pre-models/***.  
     - copy (or make soft link) *conf/* in ***voxceleb/v1*** to ***pre-models/***.  
     - copy (or make soft link) *sid/*, *steps/*, *utils/* in ***voxceleb/v1*** to ***pre-models/***.
