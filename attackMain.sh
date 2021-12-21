@@ -30,7 +30,8 @@ momentum=0.9
 plateau_length=5
 plateau_drop=2.0
 
-n_jobs=5
+#n_jobs=5
+n_jobs=1
 #n_jobs=10
 debug=f # "f" for False, "t" for True
 #debug=t
