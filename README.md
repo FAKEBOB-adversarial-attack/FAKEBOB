@@ -86,13 +86,13 @@ Reproduce our experiment step by step:
     Inside *data/*, there are four sub directories, i.e., *enrollment-set*, *z-norm-set*, *test-set* and *illegal-set*.
 6. Setting the System Variable which ***kaldi*** relies on. 
 We have made it as simple as possible. 
-You just need to copy and paste all the commands in ***path_cmd.sh*** to your
-***~/.zshrc*** or ***~/.bashrc*** (depending on your shell type. check by `echo $0`). 
+You just need to copy and paste all the commands in ***path_cmd.sh*** to your 
+***~/.bashrc***. 
 Do not forget to modify **KALDI_ROOT** and **FAKEBOB_PATH** in ***path_cmd.sh***.
-    - vim ~/.zshrc (or ~/.bashrc)
+    - `vim ~/.bashrc`
     - modify **KALDI_ROOT** and **FAKEBOB_PATH** in ***path_cmd.sh***
-    - copy and paste all the commands to ~/.zshrc (or ~/.bashrc)
-    - source ~/.zshrc (or ~/.bashrc)
+    - copy and paste all the commands to ~/.bashrc
+    - `source ~/.bashrc`
 7. Build speaker unique models for enrolled speakers in *enrollment-set*.  
     - Running the python file `build_spk_models.py`.   
     - After running completed, you will see several new directories, among which ***models/*** stores the speaker unique models of ivector-PLDA system (in the form of ID.iv) and GMM-UBM system (in the form of ID.gmm).
