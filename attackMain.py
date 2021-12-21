@@ -432,7 +432,7 @@ if __name__ == "__main__":
     parser.add_argument("--plateau_length", "-plateau_length", default=5, type=int)
     parser.add_argument("--plateau_drop", "-plateau_drop", default=2.0, type=float)
 
-    parser.add_argument("--n_jobs", "-nj", default=10, type=int)
+    parser.add_argument("--n_jobs", "-nj", default=1, type=int)
     # parser.add_argument("--debug", "-debug", default=False, type=bool)
     parser.add_argument("--debug", "-debug", default="f", type=str, choices=["t", "f"]) # "f" for False, "t" for True
 
