@@ -24,8 +24,9 @@ Cite our paper as follow:
     }
 
 ## New ##
-[2021.05.12]
-We remove from the loss function the outermost maximum operation since it will cause unexpected issue for benign voices whose initial loss is slightly larger than adver_thresh.
+- [2022.11.18] FAKEBOB has been incorpoated into [***SpeakerGuard***](https://github.com/speakerguard/speakerguard), a fully-pytorch-based platform for security analysis for speaker recognition. Consider using it if you want to get rid of the "messy" Kaidi. 
+- [2021.05.12]
+We remove from the loss function the outermost maximum operation since it will cause unexpected issue for benign voices whose initial loss is slightly larger than adver_thresh. 
 
 For example, suppose adver_thresh=0, and the initial loss of a benign voice is 0.01. This voice is not robust enough, so add a random noise is enough to make it adversarial. Hence, the samples_per_draw noisy samples are adversarial voices. If the outermost maximum operation is retained, all the loss of these noisy samples are zero. So the estimated gradient remains zero, and the sample will not be updated throughout the iteration procedure.
 
